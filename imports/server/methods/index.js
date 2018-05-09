@@ -21,7 +21,11 @@ Meteor.methods({
     const status = await rp(`${apiUrl}status`)
     return {status}
   },
-  'transferToken': async (senderAddress, receiverAddress, quantity) => {
+  'transferToken': async (senderAddress, receiverAddress, neoQuantity, gasQuantity) => {
     const response = await rp(`${apiUrl}`)
+  },
+  'getNotificationsByAddress': async (address) => {
+    const response = await rp(`${apiUrl}notifications/addr/${wallet1.address}`)
+    return response
   }
 })

@@ -21,7 +21,7 @@ class MatchesTable extends Component {
       //}
     //}
     render() {
-      const response = Meteor.call('getLastTransaction', (error, data) => {
+      const response = Meteor.call('getNotificationsByAddress', (error, data) => {
         if (error) {
           console.log('Error calling "getLastTransaction":', error)
           return
