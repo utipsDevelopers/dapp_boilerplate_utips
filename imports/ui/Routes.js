@@ -4,12 +4,14 @@ import {
   Switch,
   Route
 } from 'react-router-dom';
-import GeneralPanelPage from './pages/GeneralPanelPage';
+import ReportingPanelPage from './pages/ReportingPanelPage';
+import TrackingPanelPage from './pages/TrackingPanelPage';
 
 const Routes = () => (
   <Router>
     <Switch>
-      <Route exact path="/" component={GeneralPanelPage}/>
+      <Route exact path="/" component={ReportingPanelPage}/>
+      <Route exact path="/tracking" component={TrackingPanelPage}/>
     </Switch>
   </Router>
 );

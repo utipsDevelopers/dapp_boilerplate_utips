@@ -1,7 +1,7 @@
 import {Meteor} from 'meteor/meteor'
 import rp from 'request-promise'
 
-const apiUrl = 'http://localhost:8080/v1/'
+const apiUrl = 'http://29695380.ngrok.io/v1/'
 
 // Waller addresses
 const wallet1 = {

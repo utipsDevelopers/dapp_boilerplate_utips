@@ -1,3 +1,12 @@
+// AceMatch Project
+
+// SuperNavBar.js
+
+// FILE DESCRIPTION: System's FrontEnd (PENDING DESCRIPTION).
+
+// Created by Clemente Serrano on 02/09/18.
+// Copyright © 2018 UTIPS SpA. All rights reserved.
+
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
@@ -23,22 +32,22 @@ const SuperNavBar = () => (
           </NavItem>
         </Nav>
         <Nav pullRight>
-          <LinkContainer to="/home">
+          <LinkContainer to="/">
             <NavItem eventKey={2}>
               <FontAwesome name="home" /> Reporting
             </NavItem>
           </LinkContainer>
-          <LinkContainer to="/matches">
+          <LinkContainer to="/tracking">
             <NavItem eventKey={3}>
               <FontAwesome name="flag" /> Tracking
             </NavItem>
           </LinkContainer>
-          <LinkContainer to="/users">
+          <LinkContainer to="/retirement">
             <NavItem eventKey={4}>
               <FontAwesome name="users" /> Retirement
             </NavItem>
           </LinkContainer>
-          <LinkContainer to="/signin">
+          <LinkContainer to="/logout">
             <NavItem eventKey={4}>
               <FontAwesome name="sign-out" /> Logout
             </NavItem>

@@ -3,36 +3,33 @@ import ReactTable from 'react-table';
 import 'react-table/react-table.css';
 import matchSorter from 'match-sorter';
 import Time from 'react-time-format';
-import {Meteor} from 'meteor/meteor'
+import { Meteor } from 'meteor/meteor'
 
-class MatchesTable extends Component {
+class TrackingTable extends Component {
     state = {
-      matches: [],
+      status: [],
     }
-    //async componentDidMount() {
-      //try {
-        //const res = await fetch('/api/matches');
-        //const matches = await res.json();
-            //this.setState({ // eslint-disable-line
-                //matches: matches, // eslint-disable-line
-        //});
-      //} catch (e) {
-      //  console.log(e);
-      //}
-    //}
+    async componentDidMount() {
+      try {
+        Meteor.call('getLastTransaction', (error, data) => {
+            if (error) {
+              console.log('Error calling "getLastTransaction":', error)
+              return
+            }
+            console.log(data)
+            this.setState({ 
+                status: [data.status],
+            });
+        })
+      } catch (e) {
+        console.log(e);
+      }
+    }
     render() {
-      const response = Meteor.call('getLastTransaction', (error, data) => {
-        if (error) {
-          console.log('Error calling "getLastTransaction":', error)
-          return
-        }
-        console.log(data)
-        return data
-      })
       const columns = [
         {
-          id: 'fecha',
-          Header: 'Fecha',
+          id: 'date',
+          Header: 'Date',
           accessor: d => <Time value={d.fecha} format="DD/MM/YY" />,
           filterMethod: (filter, rows) =>
             matchSorter(rows, filter.value, { keys: ['fecha'] }),
@@ -77,7 +74,7 @@ class MatchesTable extends Component {
       return (
         <div>
           <ReactTable
-            data={this.state.matches}
+            data={this.state.status}
             filterable
             defaultFilterMethod={(filter, row) => String(row[filter.id]) === filter.value}
             previousText="Anterior"
@@ -94,4 +91,4 @@ class MatchesTable extends Component {
     }
 }
 
-export default MatchesTable;
+export default TrackingTable;
