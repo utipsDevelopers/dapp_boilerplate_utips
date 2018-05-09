@@ -35,36 +35,36 @@ class TrackingTable extends Component {
             matchSorter(rows, filter.value, { keys: ['fecha'] }),
           filterAll: true,
         }, {
-          id: 'club',
-          Header: 'Attr 1',
+          id: 'company_name',
+          Header: 'Company name',
           accessor: d => d.club,
           filterMethod: (filter, rows) =>
             matchSorter(rows, filter.value, { keys: ['club'] }),
           filterAll: true,
         }, {
-          id: 'cancha',
-          Header: 'Attr 2',
+          id: 'company_id',
+          Header: 'Company ID',
           accessor: d => d.cancha,
           filterMethod: (filter, rows) =>
             matchSorter(rows, filter.value, { keys: ['cancha'] }),
           filterAll: true,
         }, {
-          id: 'bloque',
-          Header: 'Attr 3',
+          id: 'generation',
+          Header: 'Generation (kWh)',
           accessor: d => d.bloque,
           filterMethod: (filter, rows) =>
             matchSorter(rows, filter.value, { keys: ['bloque'] }),
           filterAll: true,
         }, {
-          id: 'jugador1',
-          Header: 'Attr 4',
+          id: 'validator',
+          Header: 'Validator',
           accessor: d => d.jugador1,
           filterMethod: (filter, rows) =>
             matchSorter(rows, filter.value, { keys: ['jugador1'] }),
           filterAll: true,
         }, {
-          id: 'jugador2',
-          Header: 'Attr 5',
+          id: 'index',
+          Header: 'Index',
           accessor: d => d.jugador2,
           filterMethod: (filter, rows) =>
             matchSorter(rows, filter.value, { keys: ['jugador2'] }),
