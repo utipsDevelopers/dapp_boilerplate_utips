@@ -3,24 +3,24 @@ import { Grid, Row, Col, Panel, Table, Button, Jumbotron } from 'react-bootstrap
 import FontAwesome from 'react-fontawesome';
 import styled from 'styled-components';
 import SuperNavBar from '../components/SuperNavBar';
-import TrakingTable from '../components/TrakingTable';
+import TrackingTable from '../components/TrackingTable';
 
-const GeneralPanelPage = () => (
+const TrackingPanelPage = () => (
   <Grid>
     <SuperNavBar />
     <Jumbotron>
-      <JumbotronTitle>Reporting</JumbotronTitle>
+      <JumbotronTitle>Trading & Ownership Tracking</JumbotronTitle>
       <JumbotronParagraph>
-        Reporting about Compliance or Disclosure Entity
+        Certificate of Origin Tracking System
       </JumbotronParagraph>
     </Jumbotron>
     <Row>
-      <TrakingTable />
+      <TrackingTable />
     </Row>
   </Grid>
 );
 
-export default GeneralPanelPage;
+export default TrackingPanelPage;
 
 const JumbotronTitle = styled.h1`
   text-align: left;
