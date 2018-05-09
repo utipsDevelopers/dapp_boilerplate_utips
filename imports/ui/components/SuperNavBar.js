@@ -4,7 +4,6 @@ import styled from 'styled-components';
 import { Navbar, Nav, NavItem } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
 import FontAwesome from 'react-fontawesome';
-import logo from '../img/logo.png';
 
 const SuperNavBar = () => (
   <AppHeader>
@@ -12,7 +11,7 @@ const SuperNavBar = () => (
       <Navbar.Header>
         <Navbar.Brand>
           <Link to="/">
-            engieFactory Smart Green Contracts
+            engieFactory
           </Link>
         </Navbar.Brand>
         <Navbar.Toggle />
@@ -26,22 +25,22 @@ const SuperNavBar = () => (
         <Nav pullRight>
           <LinkContainer to="/home">
             <NavItem eventKey={2}>
-              <FontAwesome name="home" /> General
+              <FontAwesome name="home" /> Reporting
             </NavItem>
           </LinkContainer>
           <LinkContainer to="/matches">
             <NavItem eventKey={3}>
-              <FontAwesome name="flag" /> Matches
+              <FontAwesome name="flag" /> Tracking
             </NavItem>
           </LinkContainer>
           <LinkContainer to="/users">
             <NavItem eventKey={4}>
-              <FontAwesome name="users" /> Usuarios
+              <FontAwesome name="users" /> Retirement
             </NavItem>
           </LinkContainer>
           <LinkContainer to="/signin">
             <NavItem eventKey={4}>
-              <FontAwesome name="sign-out" /> Cerrar sesión
+              <FontAwesome name="sign-out" /> Logout
             </NavItem>
           </LinkContainer>
         </Nav>
