@@ -18,5 +18,6 @@ Meteor.methods({
     return blockId
   },
   getBlockChain: () => Blocks.find.fetch(),
-  getBlockByHash: (hash) => Blocks.findOne(hash)
+  getBlockByHash: (hash) => Blocks.findOne(hash),
+  getGenerationByIndex: (hash, index) => Blocks.findOne(hash).generations[index]
 })
