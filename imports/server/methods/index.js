@@ -19,5 +19,6 @@ Meteor.methods({
   },
   getBlockChain: () => Blocks.find.fetch(),
   getBlockByHash: (hash) => Blocks.findOne(hash),
-  getGenerationByIndex: (hash, index) => Blocks.findOne(hash).generations[index]
+  getGenerationByIndex: (hash, index) => Blocks.findOne(hash).generations[index],
+  getGerationsByGenerator: (generatorName) => Generations.find({name: generatorName}).fetch()
 })
