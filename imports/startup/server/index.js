@@ -5,4 +5,4 @@ import injector from '../../mocks/generations'
 
 Meteor.startup(() => {
   Meteor.setInterval(injector, 5000)
-});
+})

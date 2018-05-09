@@ -19,11 +19,29 @@ const generatorPlants = [
   }
 ]
 
+var generationsTracker = []
+
 export default () => {
   const index = random(0, generatorPlants.length - 1)
   const data = Object.assign({}, generatorPlants[index])
   data.kwProduced = random(1, generatorPlants[index].capacity)
-  Meteor.call('injectGeneration', (error, response) => {
-  
+  data.generatedAt = new Date()
+  Meteor.call('injectGeneration', data, (error, response) => {
+    if (error) {
+      console.log('Error calling method "injectGeneration":', error)
+    } else {
+      generationsTracker.push(data)
+      if (generationsTracker.length === 5) {
+        console.log('Generating new block...')
+        Meteor.call('generateBlock', generationsTracker, (error, response) => {
+          if (error) {
+            console.log('Error calling method "generateBlock":', error)
+          } else {
+            generationsTracker = []
+            console.log('Created new block with hash:', response)
+          }
+        })
+      }
+    }
   })
 }
