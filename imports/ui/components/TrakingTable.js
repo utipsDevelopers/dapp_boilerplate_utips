@@ -3,6 +3,7 @@ import ReactTable from 'react-table';
 import 'react-table/react-table.css';
 import matchSorter from 'match-sorter';
 import Time from 'react-time-format';
+import {Meteor} from 'meteor/meteor'
 
 class MatchesTable extends Component {
     state = {
@@ -20,6 +21,14 @@ class MatchesTable extends Component {
       //}
     //}
     render() {
+      const response = Meteor.call('getLastTransaction', (error, data) => {
+        if (error) {
+          console.log('Error calling "getLastTransaction":', error)
+          return
+        }
+        console.log(data)
+        return data
+      })
       const columns = [
         {
           id: 'fecha',
