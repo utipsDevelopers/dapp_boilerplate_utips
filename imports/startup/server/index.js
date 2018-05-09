@@ -1,6 +1,8 @@
 import { Meteor } from 'meteor/meteor';
-import '../../server/methods'
+import '../../lib'
+import '../../server'
+import injector from '../../mocks/generations'
 
 Meteor.startup(() => {
-  // code to run on server at startup
+  Meteor.setInterval(injector, 5000)
 });
